@@ -1,5 +1,8 @@
 # CE888 Agentic Data Scientist
 
+**GitHub Repository:**  
+https://github.com/egemencakir-SU/egemencakir-ce888-agentic-data-scientist
+
 This project implements an offline Agentic Data Scientist capable of performing end-to-end classification tasks without relying on large language models. The system is designed to automatically analyse a dataset, generate an execution plan, train multiple machine learning models, evaluate their performance, and iteratively improve its decisions using reflection and memory.
 
 The core of the system is the executor defined in `agentic_data_scientist.py`, which orchestrates the entire workflow. It manages data loading, target detection, dataset profiling, planning, model training, evaluation, reflection, and result storage. The pipeline is fully automated and designed to handle different datasets without manual intervention.
@@ -14,25 +17,35 @@ After each run, the agent generates structured outputs including dataset profili
 
 To install the required dependencies, run:
 
+```bash
 pip install -r requirements.txt
+```
 
 To execute the agent, use:
 
+```bash
 python run_agent.py --data data/example_dataset.csv --target auto
+```
 
 The `--target` argument can be set to a specific column name or to `auto`, in which case the system will attempt to infer the target column automatically based on heuristic rules.
 
 The project also includes a sanity check script to verify that the pipeline runs correctly and produces all required outputs:
 
+```bash
 python tests/sanity_check.py
+```
 
 For full testing with coverage, run:
 
+```bash
 pytest --cov=agents --cov=tools --cov-report=html tests/
 
+```
 To view the coverage report:
 
+```bash
 start htmlcov/index.html
+```
 
 The system has been extended beyond the base template with improved planning logic, enhanced reflection analysis, memory-based learning, adaptive model selection, and robust execution handling. These improvements allow the agent to better handle different dataset scenarios such as small datasets, class imbalance, and high-dimensional data.
 
